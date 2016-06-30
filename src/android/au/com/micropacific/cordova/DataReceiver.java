@@ -119,9 +119,20 @@ public class DataReceiver extends BroadcastReceiver {
 				// 	Log.v("CipherlabRS30Plugin", "Set_ReaderOutputConfiguration was NotSupport");
 				// } else if (ClResult.S_OK == clRet){
 				// 	Log.v("CipherlabRS30Plugin", "Set_ReaderOutputConfiguration was Ok");
-				// }
+				// }				
 				
 				Log.v("CipherlabRS30Plugin", "got data, 3");
+				
+
+				
+				// fetch the data within the intent
+				String data = intent.getStringExtra(GeneralString.BcReaderData);
+				int iCodeType = intent.getIntExtra(GeneralString.BcReaderCodeType, 0);
+					
+				// display the fetched data
+				//e1.setText(data);
+				Log.v("CipherlabRS30Plugin", "got data, 3.1: " + data);
+				this.plugin.receieveScan(data,iCodeType);
 			}
 			catch(Exception e){
 				
