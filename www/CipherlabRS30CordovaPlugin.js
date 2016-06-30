@@ -24,45 +24,45 @@ var CipherlabRS30CordovaPlugin = function (require, exports, module) {
   function EchoService() {
 
     this.echo = function (str, callback) {
-			cordova.exec(callback, function (err) {
-			}, "CipherlabRS30CordovaPlugin", "echo", [str]);
+		cordova.exec(callback, function (err) {
+		}, "CipherlabRS30CordovaPlugin", "echo", [str]);
     }
 
-		this.getServiceVersion = function (callback) {
-			cordova.exec(callback, function (err) {
-			}, "CipherlabRS30CordovaPlugin", "getServiceVersion", []);
+	this.getServiceVersion = function (callback) {
+		cordova.exec(callback, function (err) {
+		}, "CipherlabRS30CordovaPlugin", "getServiceVersion", []);
     }
 
     this.initialise = function (callback) {
-			cordova.exec(callback, function (err) {
-			}, "CipherlabRS30CordovaPlugin", "initialise", []);
+		cordova.exec(callback, function (err) {
+		}, "CipherlabRS30CordovaPlugin", "initialise", []);
     }
 
     this.destroy = function (callback) {
-			cordova.exec(callback, function (err) {
-			}, "CipherlabRS30CordovaPlugin", "destroy", []);
+		cordova.exec(callback, function (err) {
+		}, "CipherlabRS30CordovaPlugin", "destroy", []);
     }
 
-		this.setReceiveScanCallback = function (callback) {
-			var barcodes = this.barcodeTypes;
-			var cb = function(data) {
-				data.format = "Unknown";
-				for(var key in barcodes) {
-					if(barcodes[key] == parseInt(data.formatID)) {
-						data.format = key;
-						break;
-					}
+	this.setReceiveScanCallback = function (callback) {
+		var barcodes = this.barcodeTypes;
+		var cb = function(data) {
+			data.format = "Unknown";
+			for(var key in barcodes) {
+				if(barcodes[key] == parseInt(data.formatID)) {
+					data.format = key;
+					break;
 				}
-				callback(data);
-      			}
-			cordova.exec(cb, function (err) {
-			}, "CipherlabRS30CordovaPlugin", "setReceiveScanCallback", []);
-		}
+			}
+			callback(data);
+  			}
+		cordova.exec(cb, function (err) {
+		}, "CipherlabRS30CordovaPlugin", "setReceiveScanCallback", []);
+	}
 
-		this.requestScan = function(callback) {
-			cordova.exec(callback, function (err) {
-			}, "CipherlabRS30CordovaPlugin", "requestScan", []);
-		}
+	this.requestScan = function(callback) {
+		cordova.exec(callback, function (err) {
+		}, "CipherlabRS30CordovaPlugin", "requestScan", []);
+	}
 
     this.barcodeTypes = {
     	"Unknown": 0,

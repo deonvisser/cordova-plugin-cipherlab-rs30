@@ -71,19 +71,19 @@ public class CipherlabRS30Plugin extends CordovaPlugin {
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-	        Log.v("CipherlabRS30Plugin", "============== execute ===========: " + action);
-	
-	        if (action.equals("echo")) {
-	            String message = args.getString(0);
-	            this.echo(message, callbackContext);
-	            return true;
-	        }
-	        
-	        if (action.equals("getServiceVersion")) {
-	            String message = mReaderManager.Get_BarcodeServiceVer();
-	            this.echo(message, callbackContext);
-	            return true;
-	        }
+        Log.v("CipherlabRS30Plugin", "============== execute ===========: " + action);
+
+        if (action.equals("echo")) {
+            String message = args.getString(0);
+            this.echo(message, callbackContext);
+            return true;
+        }
+        
+        if (action.equals("getServiceVersion")) {
+            String message = mReaderManager.Get_BarcodeServiceVer();
+            this.echo(message, callbackContext);
+            return true;
+        }
 	
 		if (action.equals("initialise")) {
 			this.initialise(callbackContext);
