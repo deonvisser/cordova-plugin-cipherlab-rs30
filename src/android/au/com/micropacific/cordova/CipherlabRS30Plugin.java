@@ -124,9 +124,8 @@ public class CipherlabRS30Plugin extends CordovaPlugin {
 				// Call this from window.onbeforeunload
 				Log.v("CipherlabRS30Plugin", "destroy(): cleaning up.");
 			
-				/*2016-08-25*/
-				//cordova.getActivity().unregisterReceiver(mDataReceiver);
-				//mReaderManager.Release();
+				cordova.getActivity().unregisterReceiver(mDataReceiver);
+				mReaderManager.Release();
 			
 				mDataReceiver = null;
 				mReaderManager = null;
