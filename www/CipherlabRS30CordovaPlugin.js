@@ -48,6 +48,7 @@ var CipherlabRS30CordovaPlugin = function (require, exports, module) {
 		var cb = function(data) {
 			data.format = "Unknown";
 			for(var key in barcodes) {
+				console.log("key = " + key);
 				if(barcodes[key] == parseInt(data.formatID)) {
 					data.format = key;
 					break;
