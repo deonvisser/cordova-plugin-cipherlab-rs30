@@ -65,7 +65,7 @@ public class CipherlabRS30Plugin extends CordovaPlugin {
 	private CallbackContext receiveScanCallback;
 
 	public CipherlabRS30Plugin(){
-		
+		Log.v("CipherlabRS30Plugin", "Constructor...");
 	}
 
 	@Override
