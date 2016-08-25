@@ -55,6 +55,7 @@ public class DataReceiver extends BroadcastReceiver {
 
 	public DataReceiver(CipherlabRS30Plugin _plugin, ReaderManager _ReaderManager)
 	{
+		Log.v("DataReceiver");
 		this.mReaderManager = _ReaderManager;
 		this.plugin = _plugin;
 	}
