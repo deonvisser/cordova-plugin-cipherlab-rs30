@@ -69,9 +69,9 @@ public class DataReceiver extends BroadcastReceiver {
 			if (txtdata == null)
 			{
 				byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-				this.plugin.receieveScan(bytedata);
+				this.plugin.receieveScanB(bytedata);
 			} else {
-				this.plugin.receieveScan(txtdata);
+				this.plugin.receieveScanT(txtdata);
 			}
 			
 			
@@ -82,9 +82,9 @@ public class DataReceiver extends BroadcastReceiver {
 			if (txtdata == null)
 			{
 				byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-				this.plugin.receieveScan(bytedata);
+				this.plugin.receieveScanB(bytedata);
 			} else {
-				this.plugin.receieveScan(txtdata);
+				this.plugin.receieveScanT(txtdata);
 			}
 				
 		} else if (intent.getAction().equals(GeneralString.Intent_READERSERVICE_CONNECTED)){
