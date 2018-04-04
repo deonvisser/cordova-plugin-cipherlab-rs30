@@ -66,26 +66,28 @@ public class DataReceiver extends BroadcastReceiver {
 				
 			// fetch the data within the intent
 			String txtdata = intent.getStringExtra(GeneralString.BcReaderData);
-			if (txtdata == null)
-			{
-				byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-				this.plugin.receieveScanB(bytedata);
-			} else {
-				this.plugin.receieveScanT(txtdata);
-			}
+			this.plugin.receieveScan(txtdata);
+			//if (txtdata == null)
+			//{
+			//	byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
+			//	this.plugin.receieveScanB(bytedata);
+			//} else {
+			//	this.plugin.receieveScan(txtdata);
+			//}
 			
 			
 		} else if (intent.getAction().equals(GeneralString.Intent_PASS_TO_APP)){
 				
 			// fetch the data within the intent
 			String txtdata = intent.getStringExtra(GeneralString.BcReaderData);
-			if (txtdata == null)
-			{
-				byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-				this.plugin.receieveScanB(bytedata);
-			} else {
-				this.plugin.receieveScanT(txtdata);
-			}
+			this.plugin.receieveScan(txtdata);
+			//if (txtdata == null)
+			//{
+			//	byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
+			//	this.plugin.receieveScanB(bytedata);
+			//} else {
+			//	this.plugin.receieveScan(txtdata);
+			//}
 				
 		} else if (intent.getAction().equals(GeneralString.Intent_READERSERVICE_CONNECTED)){
 			try {
