@@ -66,6 +66,7 @@ public class DataReceiver extends BroadcastReceiver {
 				
 			// fetch the data within the intent
 			String data = intent.getStringExtra(GeneralString.BcReaderData);
+			byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
 			int iCodeType = intent.getIntExtra(GeneralString.BcReaderCodeType, 0);
 				
 			// display the fetched data
@@ -77,6 +78,7 @@ public class DataReceiver extends BroadcastReceiver {
 				
 			// fetch the data within the intent
 			String data = intent.getStringExtra(GeneralString.BcReaderData);
+			byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
 			int iCodeType = intent.getIntExtra(GeneralString.BcReaderCodeType, 0);
 				
 			// display the fetched data
