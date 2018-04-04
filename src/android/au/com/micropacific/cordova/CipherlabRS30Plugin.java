@@ -139,13 +139,11 @@ public class CipherlabRS30Plugin extends CordovaPlugin {
 	        return false;
 	}
 	
-	public void receieveScan(String data, byte[] byteData, int iCodeType){	
+	public void receieveScan(byte[] data){	
 
 		final JSONObject result = new JSONObject();
 		try {
-			result.put("text",data);
-			result.put("bytes",byteData);
-			result.put("formatID",iCodeType);
+			result.put(data);
 		} catch (JSONException e) { e.printStackTrace(); }
 		
 		PluginResult progressResult = new PluginResult(PluginResult.Status.OK, result);
