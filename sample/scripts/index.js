@@ -45,7 +45,21 @@ SOFTWARE.
             append("init done");
             
             cordova.plugins.CipherlabRS30CordovaPlugin.setReceiveScanCallback(function (data) {
-                append("scan received: " + data);
+                // Get the array buffer of the South African Drivers License.
+                var byteArray = new Uint8Array(data);
+                // for each element, we want to get its two-digit hexadecimal representation
+                var hexParts = [];
+                for(let i = 0; i < byteArray.length; i++) {
+                    // convert value to hexadecimal
+                    var hex = byteArray[i].toString(16);
+                    // pad with zeros to length 2
+                    var paddedHex = ('00' + hex).slice(-2);
+                    // push to array
+                    hexParts.push(paddedHex);
+                }
+                //join to one string
+                 var hexAll = hexParts.join('');
+                console.log(hexAll);  
             });
 
         });
