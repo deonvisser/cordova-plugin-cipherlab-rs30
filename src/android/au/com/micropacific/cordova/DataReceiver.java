@@ -65,29 +65,27 @@ public class DataReceiver extends BroadcastReceiver {
 		if (intent.getAction().equals(GeneralString.Intent_SOFTTRIGGER_DATA)) {
 				
 			// fetch the data within the intent
-			String txtdata = intent.getStringExtra(GeneralString.BcReaderData);
-			this.plugin.receieveScan(txtdata);
-			//if (txtdata == null)
-			//{
-			//	byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-			//	this.plugin.receieveScanB(bytedata);
-			//} else {
-			//	this.plugin.receieveScan(txtdata);
-			//}
+			String txtData = intent.getStringExtra(GeneralString.BcReaderData);
+			if (txtdata == null)
+			{
+				byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
+				this.plugin.receieveScanB(byteData);
+			} else {
+				this.plugin.receieveScanT(txtData);
+			}
 			
 			
 		} else if (intent.getAction().equals(GeneralString.Intent_PASS_TO_APP)){
 				
 			// fetch the data within the intent
-			String txtdata = intent.getStringExtra(GeneralString.BcReaderData);
-			this.plugin.receieveScan(txtdata);
-			//if (txtdata == null)
-			//{
-			//	byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-			//	this.plugin.receieveScanB(bytedata);
-			//} else {
-			//	this.plugin.receieveScan(txtdata);
-			//}
+			String txtData = intent.getStringExtra(GeneralString.BcReaderData);
+			if (txtdata == null)
+			{
+				byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
+				this.plugin.receieveScanB(byteData);
+			} else {
+				this.plugin.receieveScanT(txtData);
+			}
 				
 		} else if (intent.getAction().equals(GeneralString.Intent_READERSERVICE_CONNECTED)){
 			try {
