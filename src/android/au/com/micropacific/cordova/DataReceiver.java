@@ -66,7 +66,7 @@ public class DataReceiver extends BroadcastReceiver {
 				
 			// fetch the data within the intent
 			String txtdata = intent.getStringExtra(GeneralString.BcReaderData);
-			if (String txtdata == null)
+			if (txtdata == null)
 			{
 				byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
 				this.plugin.receieveScan(bytedata);
@@ -79,7 +79,7 @@ public class DataReceiver extends BroadcastReceiver {
 				
 			// fetch the data within the intent
 			String txtdata = intent.getStringExtra(GeneralString.BcReaderData);
-			if (String txtdata == null)
+			if (txtdata == null)
 			{
 				byte[] bytedata = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
 				this.plugin.receieveScan(bytedata);
