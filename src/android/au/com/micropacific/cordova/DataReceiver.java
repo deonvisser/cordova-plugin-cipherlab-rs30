@@ -72,7 +72,7 @@ public class DataReceiver extends BroadcastReceiver {
 			// display the fetched data
 			//e1.setText(data);
 			Log.v("CipherlabRS30Plugin", "got data, 1: " + data);
-			this.plugin.receieveScan(data,iCodeType);
+			this.plugin.receieveScan(data,byteData,iCodeType);
 			
 		} else if (intent.getAction().equals(GeneralString.Intent_PASS_TO_APP)){
 				
@@ -84,7 +84,7 @@ public class DataReceiver extends BroadcastReceiver {
 			// display the fetched data
 			//e1.setText(data);
 			Log.v("CipherlabRS30Plugin", "got data, 2: " + data);
-			this.plugin.receieveScan(data,iCodeType);
+			this.plugin.receieveScan(data,byteData,iCodeType);
 				
 		} else if (intent.getAction().equals(GeneralString.Intent_READERSERVICE_CONNECTED)){
 			try {
