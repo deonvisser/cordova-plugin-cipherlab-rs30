@@ -65,26 +65,26 @@ public class DataReceiver extends BroadcastReceiver {
 		if (intent.getAction().equals(GeneralString.Intent_SOFTTRIGGER_DATA)) {
 				
 			// fetch the data within the intent
-			String data = intent.getStringExtra(GeneralString.BcReaderData);
-			byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-			int iCodeType = intent.getIntExtra(GeneralString.BcReaderCodeType);
+			//String data = intent.getStringExtra(GeneralString.BcReaderData);
+			byte[] data = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
+			//int iCodeType = intent.getIntExtra(GeneralString.BcReaderCodeType;
 				
 			// display the fetched data
 			//e1.setText(data);
 			Log.v("CipherlabRS30Plugin", "got data, 1: " + data);
-			this.plugin.receieveScan(data,byteData,iCodeType);
+			this.plugin.receieveScan(data);
 			
 		} else if (intent.getAction().equals(GeneralString.Intent_PASS_TO_APP)){
 				
 			// fetch the data within the intent
-			String data = intent.getStringExtra(GeneralString.BcReaderData);
-			byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-			int iCodeType = intent.getIntExtra(GeneralString.BcReaderCodeType;
+			//String data = intent.getStringExtra(GeneralString.BcReaderData);
+			byte[] data = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
+			//int iCodeType = intent.getIntExtra(GeneralString.BcReaderCodeType;
 				
 			// display the fetched data
 			//e1.setText(data);
 			Log.v("CipherlabRS30Plugin", "got data, 2: " + data);
-			this.plugin.receieveScan(data,byteData,iCodeType);
+			this.plugin.receieveScan(data);
 				
 		} else if (intent.getAction().equals(GeneralString.Intent_READERSERVICE_CONNECTED)){
 			try {
