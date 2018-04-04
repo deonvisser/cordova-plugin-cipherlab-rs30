@@ -141,6 +141,13 @@ public class CipherlabRS30Plugin extends CordovaPlugin {
 	
 	public void receieveScan(byte[] data, String txtData)
 	{	
+		final JSONObject result = new JSONObject();
+		try {
+			result.put("text",txtData);
+			result.put("bytes",data);
+		} 
+		catch (JSONException e) { e.printStackTrace(); 
+		}
 		PluginResult progressResult = new PluginResult(PluginResult.Status.OK, data);
 		progressResult.setKeepCallback(true);
 	
@@ -148,6 +155,7 @@ public class CipherlabRS30Plugin extends CordovaPlugin {
 		{
 			Log.v("CipherlabRS30Plugin", "receiveScanCallback is null.");
 		} else {
+			Log.i("All Cool");
 			receiveScanCallback.sendPluginResult(progressResult);
 		}
 	}
