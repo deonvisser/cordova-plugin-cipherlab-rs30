@@ -70,10 +70,10 @@ public class DataReceiver extends BroadcastReceiver {
 			if (txtData == null)
 			{
 				byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-				String txtData = null;
+				txtData = null;
 				this.plugin.receieveScan(txtData, byteData);
 			} else {
-				byte[] byteData = null;
+				byteData = null;
 				this.plugin.receieveScanT(txtData, byteData);
 			}
 			//String txtData = intent.getStringExtra(GeneralString.BcReaderData);
@@ -88,10 +88,10 @@ public class DataReceiver extends BroadcastReceiver {
 			if (txtData == null)
 			{
 				byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-				String txtData = null;
+				txtData = null;
 				this.plugin.receieveScan(txtData, byteData);
 			} else {
-				byte[] byteData = null;
+				byteData = null;
 				this.plugin.receieveScanT(txtData, byteData);
 			}
 			//String txtData = intent.getStringExtra(GeneralString.BcReaderData);
