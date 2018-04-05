@@ -149,19 +149,23 @@ public class CipherlabRS30Plugin extends CordovaPlugin {
 			if (receiveScanCallback == null)
 			{
 				Log.v("CipherlabRS30Plugin", "receiveScanCallback is null.");
-			} else {
+			} 
+			else 
+			{
 				receiveScanCallback.sendPluginResult(progressResult);
 			}	
 		
-			} else {
-				{
+		} 
+		else 
+		{
 			PluginResult progressResult = new PluginResult(PluginResult.Status.OK, txtData);
 			progressResult.setKeepCallback(true);
 	
 			if (receiveScanCallback == null)
 			{
 				Log.v("CipherlabRS30Plugin", "receiveScanCallback is null.");
-			} else {
+			} else 
+			{
 				receiveScanCallback.sendPluginResult(progressResult);
 			}
 		}
