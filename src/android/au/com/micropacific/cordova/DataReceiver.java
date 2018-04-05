@@ -66,6 +66,7 @@ public class DataReceiver extends BroadcastReceiver {
 				
 			// fetch the data within the intent
 			String txtData = intent.getStringExtra(GeneralString.BcReaderData);
+			
 			if (txtData == null)
 			{
 				byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
@@ -83,6 +84,7 @@ public class DataReceiver extends BroadcastReceiver {
 				
 			// fetch the data within the intent
 			String txtData = intent.getStringExtra(GeneralString.BcReaderData);
+			Log.v("CipherlabRS30Plugin", txtData);
 			if (txtData == null)
 			{
 				byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
