@@ -66,10 +66,10 @@ public class DataReceiver extends BroadcastReceiver {
 				
 			// fetch the data within the intent
 			String txtData = intent.getStringExtra(GeneralString.BcReaderData);
-			
+			byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
+			Log.v("CipherlabRS30Plugin", txtData);
 			if (txtData == null)
 			{
-				byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
 				txtData = null;
 				this.plugin.receieveScan(txtData, byteData);
 			} else {
@@ -84,10 +84,10 @@ public class DataReceiver extends BroadcastReceiver {
 				
 			// fetch the data within the intent
 			String txtData = intent.getStringExtra(GeneralString.BcReaderData);
+			byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
 			Log.v("CipherlabRS30Plugin", txtData);
 			if (txtData == null)
 			{
-				byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
 				txtData = null;
 				this.plugin.receieveScan(txtData, byteData);
 			} else {
