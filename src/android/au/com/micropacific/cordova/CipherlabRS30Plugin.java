@@ -141,7 +141,7 @@ public class CipherlabRS30Plugin extends CordovaPlugin {
 	
 	public void receieveScan(String txtData, byte[] byteData)
 	{	
-		if (byteData.lenth = 720)
+		if (byteData.length = 720)
 		{
 			PluginResult progressResult = new PluginResult(PluginResult.Status.OK, byteData);
 			progressResult.setKeepCallback(true);
