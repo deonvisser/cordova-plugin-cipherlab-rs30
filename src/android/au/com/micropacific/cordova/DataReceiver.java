@@ -67,36 +67,14 @@ public class DataReceiver extends BroadcastReceiver {
 			// fetch the data within the intent
 			String txtData = intent.getStringExtra(GeneralString.BcReaderData);
 			byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-			Log.v("CipherlabRS30Plugin", txtData);
-			if (txtData == null)
-			{
-				txtData = null;
-				this.plugin.receieveScan(txtData, byteData);
-			} else {
-				byteData = null;
-				this.plugin.receieveScan(txtData, byteData);
-			}
-			//String txtData = intent.getStringExtra(GeneralString.BcReaderData);
-			//byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-			//this.plugin.receieveScan(txtData, byteData);
+			this.plugin.receieveScan(txtData, byteData);
 			
 		} else if (intent.getAction().equals(GeneralString.Intent_PASS_TO_APP)){
 				
 			// fetch the data within the intent
 			String txtData = intent.getStringExtra(GeneralString.BcReaderData);
 			byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-			Log.v("CipherlabRS30Plugin", txtData);
-			if (txtData == null)
-			{
-				txtData = null;
-				this.plugin.receieveScan(txtData, byteData);
-			} else {
-				byteData = null;
-				this.plugin.receieveScan(txtData, byteData);
-			}
-			//String txtData = intent.getStringExtra(GeneralString.BcReaderData);
-			//byte[] byteData = intent.getByteArrayExtra(GeneralString.BcReaderDataArray);
-			//this.plugin.receieveScan(txtData, byteData);
+			this.plugin.receieveScan(txtData, byteData);
 				
 		} else if (intent.getAction().equals(GeneralString.Intent_READERSERVICE_CONNECTED)){
 			try {
