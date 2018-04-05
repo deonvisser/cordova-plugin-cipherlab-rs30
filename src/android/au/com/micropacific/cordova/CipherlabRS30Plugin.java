@@ -142,33 +142,30 @@ public class CipherlabRS30Plugin extends CordovaPlugin {
 	public void receieveScan(String txtData, byte[] byteData)
 	{	
 		if (txtData == null)
+		{
+			PluginResult progressResult = new PluginResult(PluginResult.Status.OK, byteData);
+			progressResult.setKeepCallback(true);
+	
+			if (receiveScanCallback == null)
 			{
-				final JSONObject result = new JSONObject();
-				try {
-					result.put("byte",byteData);		
-				} 
-					catch (JSONException e) { e.printStackTrace(); 
-				}
+				Log.v("CipherlabRS30Plugin", "receiveScanCallback is null.");
+			} else {
+				receiveScanCallback.sendPluginResult(progressResult);
+			}	
 		
 			} else {
-				final JSONObject result = new JSONObject();
-				try {
-					result.put("text",txtData);		
-				} 
-					catch (JSONException e) { e.printStackTrace(); }
-				}
-		
-		
-		
-		PluginResult progressResult = new PluginResult(PluginResult.Status.OK, data);
-		progressResult.setKeepCallback(true);
+				{
+			PluginResult progressResult = new PluginResult(PluginResult.Status.OK, txtData);
+			progressResult.setKeepCallback(true);
 	
-		if (receiveScanCallback == null)
-		{
-			Log.v("CipherlabRS30Plugin", "receiveScanCallback is null.");
-		} else {
-			receiveScanCallback.sendPluginResult(progressResult);
+			if (receiveScanCallback == null)
+			{
+				Log.v("CipherlabRS30Plugin", "receiveScanCallback is null.");
+			} else {
+				receiveScanCallback.sendPluginResult(progressResult);
+			}
 		}
+		
 	}
 	
 
